@@ -65,7 +65,7 @@ current screen
 specifications in sawfish, which use pixels.  This is done to make it simpler to 
 move your configuration between machines without worrying about screen sizes.
 
-The placement functions aren't smart enough to avoid dockbars and other windows 
-that are supposed to be ignored.  To workaround this problem just account for 
-those windows by specifying candidate placements that don't place windows over 
-docks.
+The placement algorithm is pretty naive when it comes to avoiding dock windows 
+(such as xfce4-panel).  If you shove a window into a region of the screen that 
+contains a dock window, the window will be shrank in such a way as to not 
+overlap with the dock, but still be wholly contained within the region.
